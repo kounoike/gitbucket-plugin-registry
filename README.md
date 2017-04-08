@@ -1,0 +1,1 @@
+# gitbucket-plugin-registry
