@@ -19,4 +19,4 @@ after_success:
   - git checkout registry
   - git add release
   - git commit release -m "GitBucketPlugins CI"
-  - git push origin registry
+  - git push origin HEAD:registry
