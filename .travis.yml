@@ -1,0 +1,17 @@
+language: python
+python:
+  - "2.7"
+
+before_script:
+  - git config --global user.email "kounoike.yuusuke@gmail.com"
+  - git config --global user.name "GitBucketPlugins CI Agent"
+  - mkdir -p release
+
+script:
+  - python create_registry.py
+
+after_success:
+  - git checkout registry
+  - git add release
+  - git commit release -m "GitBucketPlugins CI"
+  - git push origin registry
