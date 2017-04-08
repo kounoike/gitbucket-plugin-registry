@@ -18,5 +18,6 @@ after_success:
   - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - git checkout registry
   - git add release
+  - git status
   - git commit release -m "GitBucketPlugins CI"
   - git push origin HEAD:registry
