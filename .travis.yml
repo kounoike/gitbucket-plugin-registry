@@ -11,6 +11,9 @@ script:
   - python create_registry.py
 
 after_success:
+  - ls -lR release
+  - git config credential.helper "store --file=.git/credentials"
+  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - git checkout registry
   - git add release
   - git commit release -m "GitBucketPlugins CI"
